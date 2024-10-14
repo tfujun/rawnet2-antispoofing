@@ -138,8 +138,8 @@ if __name__ == '__main__':
     parser.add_argument('--model_path', type=str,
                         default=None, help='Model checkpoint')
    
-    parser.add_argument('--database_path', type=str, default='/your/path/to/data/ASVspoof_database/', help='change this to user\'s full directory address of LA database')
-    parser.add_argument('--protocols_path', type=str, default='database/ASVspoof2019_LA_cm_protocols/', help='Change with path to user\'s LA database protocols directory address')
+    parser.add_argument('--database_path', type=str, default='../2019/LA/', help='change this to user\'s full directory address of LA database')
+    parser.add_argument('--protocols_path', type=str, default='../2019/LA/ASVspoof2019_LA_cm_protocols/', help='Change with path to user\'s LA database protocols directory address')
     parser.add_argument('--eval_output', type=str, default=None,
                         help='Path to save the evaluation result')
     parser.add_argument('--batch_size', type=int, default=32)
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     dir_yaml = os.path.splitext('model_config_RawNet2')[0] + '.yaml'
 
     with open(dir_yaml, 'r') as f_yaml:
-            parser1 = yaml.load(f_yaml)
+            parser1 = yaml.safe_load(f_yaml)
 
     
     np.random.seed(parser1['seed'])

@@ -36,7 +36,7 @@ python main.py --track=logical --loss=CCE --is_eval --eval --model_path='/path/t
 If you would like to compute scores on the development set of ASVspoof 2019 simply run:
 
 ```
-python main.py --track=logical --loss=CCE --eval --model_path='/path/to/your/best_model.pth' --eval_output='dev_CM_scores.txt'
+python main.py --track=logical --loss=CCE --eval --model_path='"D:/src/honours/rawnet2-antispoofing/models/epoch_90.pth"' --eval_output='dev_CM_scores.txt'
 ```
 
 Compute the min t-DCF and EER(%) on development and evaluation dataset
